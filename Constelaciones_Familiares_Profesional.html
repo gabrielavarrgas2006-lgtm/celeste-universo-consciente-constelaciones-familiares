@@ -86,7 +86,7 @@
             border-color: #FFFFFF;
         }
 
-        /* Slightly Elevated Pastel Accent Card (Replaces all dark blocks) */
+        /* Slightly Elevated Pastel Accent Card */
         .frosted-card-accent {
             background: linear-gradient(
                 145deg,
@@ -96,6 +96,20 @@
             );
             border: 1.5px solid #FFF5FA;
             box-shadow: 0 12px 30px -4px rgba(59, 26, 96, 0.12);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+
+        /* Footer Soft Pink Pastel Card */
+        .footer-pastel-pink {
+            background: linear-gradient(
+                145deg,
+                #FFF0F6 0%,
+                #F6E2EE 50%,
+                #ECD3E7 100%
+            );
+            border-top: 1.5px solid #FFFFFF;
+            box-shadow: 0 -10px 28px -4px rgba(59, 26, 96, 0.08);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
         }
@@ -186,32 +200,27 @@
     <!-- Sparkles Background Layer -->
     <div class="sparkles-container" id="sparklesContainer" aria-hidden="true"></div>
 
-    <!-- Header Navigation -->
-    <header class="sticky top-0 z-50 backdrop-blur-lg bg-white/75 border-b border-white/60 shadow-sm transition-all duration-300">
-        <div class="max-w-7xl mx-auto px-6 lg:px-12 h-20 sm:h-24 flex items-center justify-between">
+    <!-- Header Navigation (Clean, Spacious, Uncluttered) -->
+    <header class="sticky top-0 z-50 backdrop-blur-lg bg-white/80 border-b border-white/60 shadow-xs transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12 h-20 flex items-center justify-between">
             <a href="#" class="flex items-center space-x-3.5 group">
-                <!-- Profile Avatar Photo (Tree of Life, Zero black padding, 100% cropped) -->
-                <div class="w-12 h-12 rounded-full overflow-hidden flex-shrink-0 border-2 border-white shadow-md relative bg-[#FAF0F5] group-hover:scale-105 transition-transform">
-                    <img src="celeste-logo.jpg" alt="Celeste - Constelaciones Familiares" class="w-full h-full object-cover scale-125 transform">
+                <!-- Profile Avatar Photo (Tree of Life, Zero black padding) -->
+                <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-full overflow-hidden flex-shrink-0 border-2 border-white shadow-md relative bg-[#FAF0F5] group-hover:scale-105 transition-transform">
+                    <img src="celeste-logo.jpg" alt="Constelaciones Familiares" class="w-full h-full object-cover scale-125 transform">
                 </div>
-                <div class="flex flex-col justify-center">
-                    <span class="font-title text-xl sm:text-2xl font-bold text-brand-title tracking-tight leading-tight">Constelaciones Familiares</span>
-                    <span class="text-xs uppercase tracking-widest text-brand-subtitle font-bold mt-0.5">Celeste • Universo Consciente</span>
-                </div>
+                <span class="font-title text-xl sm:text-2xl font-bold text-brand-title tracking-tight leading-none">
+                    Constelaciones Familiares
+                </span>
             </a>
-            <nav class="hidden lg:flex items-center space-x-8 text-base font-semibold text-brand-subtitle">
+            
+            <!-- Navigation Links (Clean & Airy) -->
+            <nav class="flex items-center space-x-6 sm:space-x-8 text-sm sm:text-base font-semibold text-brand-subtitle">
                 <a href="#enfoque" class="hover:text-brand-title transition-colors">El Enfoque</a>
-                <a href="#trabajar" class="hover:text-brand-title transition-colors">Áreas de Trabajo</a>
+                <a href="#trabajar" class="hover:text-brand-title transition-colors">Áreas</a>
                 <a href="#aportar" class="hover:text-brand-title transition-colors">Beneficios</a>
                 <a href="#sesiones" class="hover:text-brand-title transition-colors">Sesiones</a>
                 <a href="#inversion" class="hover:text-brand-title transition-colors">Inversión</a>
             </nav>
-            <div class="flex items-center space-x-3">
-                <a href="#inversion" class="btn-pastel-primary font-bold px-6 py-3 rounded-2xl text-sm sm:text-base flex items-center space-x-2">
-                    <i class="fa-regular fa-calendar-check text-base"></i>
-                    <span>Reservar Sesión</span>
-                </a>
-            </div>
         </div>
     </header>
 
@@ -614,8 +623,8 @@
         <i class="fa-brands fa-whatsapp"></i>
     </a>
 
-    <!-- Footer & Mandatory Legal Disclaimer (100% Light Pastel Theme - Perfectly Aligned Disclaimer) -->
-    <footer class="relative z-10 frosted-card pt-16 sm:pt-20 pb-12 sm:pb-16 border-t border-white mt-auto">
+    <!-- Footer & Mandatory Legal Disclaimer (Soft Delicate Pink Pastel Theme) -->
+    <footer class="relative z-10 footer-pastel-pink pt-16 sm:pt-20 pb-12 sm:pb-16 border-t border-white mt-auto">
         <div class="max-w-7xl mx-auto px-6 lg:px-12 space-y-12 sm:space-y-16">
             <div class="grid md:grid-cols-2 gap-8 items-center">
                 <div class="space-y-3 text-center md:text-left">
@@ -639,7 +648,7 @@
             </div>
 
             <!-- Mandatory Legal Disclaimer Box (100% Perfectly Centered & Aligned Icon + Text) -->
-            <div class="bg-white/70 border border-white rounded-2xl p-5 sm:p-6 shadow-sm">
+            <div class="bg-white/80 border border-white rounded-2xl p-5 sm:p-6 shadow-sm">
                 <div class="flex items-center space-x-3.5">
                     <i class="fa-solid fa-circle-info text-brand-subtitle text-xl flex-shrink-0"></i>
                     <p class="text-xs sm:text-sm text-brand-body leading-relaxed font-normal">

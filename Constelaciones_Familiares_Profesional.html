@@ -25,10 +25,8 @@
                             title: '#180B2B',
                             subtitle: '#3B1A60',
                             body: '#2A1245',
-                            dark: '#140824',
                             border: '#FFF5FA',
-                            badgeBg: 'rgba(250, 240, 245, 0.75)',
-                            badgeText: '#3B1A60',
+                            badgeBg: '#FAF0F5',
                         }
                     },
                     fontFamily: {
@@ -46,7 +44,7 @@
     </script>
     
     <style>
-        /* Exact Visual System Specifications */
+        /* Exact Visual System Specifications - 100% Light Pastel Theme */
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
             color: #2A1245;
@@ -88,6 +86,20 @@
             border-color: #FFFFFF;
         }
 
+        /* Slightly Elevated Pastel Accent Card (Replaces all dark blocks) */
+        .frosted-card-accent {
+            background: linear-gradient(
+                145deg,
+                #F2DCED 0%,
+                #E4C9EA 60%,
+                #D7B7E6 100%
+            );
+            border: 1.5px solid #FFF5FA;
+            box-shadow: 0 12px 30px -4px rgba(59, 26, 96, 0.12);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+
         /* Icon styling according to spec */
         .icon-box {
             background: linear-gradient(135deg, #FAF0F5 0%, #E8D5EB 100%);
@@ -96,16 +108,28 @@
             box-shadow: 0 4px 12px rgba(59, 26, 96, 0.06);
         }
 
-        /* WhatsApp Button styling according to spec */
+        /* Primary Action Pastel Button */
+        .btn-pastel-primary {
+            background: linear-gradient(135deg, #3B1A60 0%, #2A1245 100%);
+            color: #FFFFFF !important;
+            box-shadow: 0 8px 20px -3px rgba(59, 26, 96, 0.25);
+            transition: all 0.3s ease;
+        }
+        .btn-pastel-primary:hover {
+            box-shadow: 0 12px 25px -3px rgba(59, 26, 96, 0.35);
+            transform: translateY(-2px);
+        }
+
+        /* WhatsApp Button styling (Single Floating Button on Page) */
         .btn-whatsapp {
             background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
             color: #FFFFFF !important;
-            box-shadow: 0 10px 25px -5px rgba(37, 211, 102, 0.35);
+            box-shadow: 0 10px 25px -5px rgba(37, 211, 102, 0.4);
             transition: all 0.3s ease;
         }
         .btn-whatsapp:hover {
-            box-shadow: 0 14px 30px -3px rgba(37, 211, 102, 0.5);
-            transform: translateY(-2px) scale(1.01);
+            box-shadow: 0 14px 30px -3px rgba(37, 211, 102, 0.55);
+            transform: translateY(-2px) scale(1.05);
         }
 
         /* Subtle Sparkles Background (Brillitos Sutiles) */
@@ -163,15 +187,16 @@
     <div class="sparkles-container" id="sparklesContainer" aria-hidden="true"></div>
 
     <!-- Header Navigation -->
-    <header class="sticky top-0 z-50 backdrop-blur-lg bg-white/70 border-b border-white/60 shadow-sm transition-all duration-300">
+    <header class="sticky top-0 z-50 backdrop-blur-lg bg-white/75 border-b border-white/60 shadow-sm transition-all duration-300">
         <div class="max-w-7xl mx-auto px-6 lg:px-12 h-20 sm:h-24 flex items-center justify-between">
-            <a href="#" class="flex items-center space-x-3 group">
-                <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-2xl icon-box flex items-center justify-center text-lg font-title font-extrabold tracking-wider flex-shrink-0 group-hover:scale-105 transition-transform">
-                    CF
+            <a href="#" class="flex items-center space-x-3.5 group">
+                <!-- Profile Avatar Photo (Tree of Life, Zero black padding, 100% cropped) -->
+                <div class="w-12 h-12 rounded-full overflow-hidden flex-shrink-0 border-2 border-white shadow-md relative bg-[#FAF0F5] group-hover:scale-105 transition-transform">
+                    <img src="celeste-logo.jpg" alt="Celeste - Constelaciones Familiares" class="w-full h-full object-cover scale-125 transform">
                 </div>
-                <div>
-                    <span class="font-title text-xl sm:text-2xl font-bold text-brand-title tracking-tight block leading-tight">Constelaciones Familiares</span>
-                    <span class="text-xs uppercase tracking-widest text-brand-subtitle font-bold block mt-0.5">Celeste • Universo Consciente</span>
+                <div class="flex flex-col justify-center">
+                    <span class="font-title text-xl sm:text-2xl font-bold text-brand-title tracking-tight leading-tight">Constelaciones Familiares</span>
+                    <span class="text-xs uppercase tracking-widest text-brand-subtitle font-bold mt-0.5">Celeste • Universo Consciente</span>
                 </div>
             </a>
             <nav class="hidden lg:flex items-center space-x-8 text-base font-semibold text-brand-subtitle">
@@ -182,10 +207,9 @@
                 <a href="#inversion" class="hover:text-brand-title transition-colors">Inversión</a>
             </nav>
             <div class="flex items-center space-x-3">
-                <a href="https://wa.me/5491154581020?text=Hola%20Celeste,%20me%20gustar%C3%ADa%20consultar%20sobre%20las%20sesiones%20de%20Constelaciones%20Familiares.%20Quisiera%20conocer%20disponibilidad,%20modalidad%20y%20precio.%20Muchas%20gracias." target="_blank" rel="noopener" class="btn-whatsapp font-bold px-5 py-3 rounded-2xl text-sm sm:text-base flex items-center space-x-2">
-                    <i class="fa-brands fa-whatsapp text-lg"></i>
-                    <span class="hidden sm:inline">Reservar por WhatsApp</span>
-                    <span class="sm:hidden">Consultar</span>
+                <a href="#inversion" class="btn-pastel-primary font-bold px-6 py-3 rounded-2xl text-sm sm:text-base flex items-center space-x-2">
+                    <i class="fa-regular fa-calendar-check text-base"></i>
+                    <span>Reservar Sesión</span>
                 </a>
             </div>
         </div>
@@ -210,9 +234,9 @@
                             Las Constelaciones Familiares son una herramienta de abordaje sistémico que nos permite mirar nuestra historia y aquello que ocurrió antes de nosotros: padres, abuelos y las dinámicas profundas del sistema familiar.
                         </p>
                         <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2 w-full sm:w-auto">
-                            <a href="https://wa.me/5491154581020?text=Hola%20Celeste,%20me%20gustar%C3%ADa%20consultar%20sobre%20las%20sesiones%20de%20Constelaciones%20Familiares.%20Quisiera%20conocer%20disponibilidad,%20modalidad%20y%20precio.%20Muchas%20gracias." target="_blank" rel="noopener" class="w-full sm:w-auto btn-whatsapp font-bold px-8 py-4 rounded-2xl flex items-center justify-center space-x-3 text-base sm:text-lg">
-                                <i class="fa-brands fa-whatsapp text-xl"></i>
-                                <span>Agendar Turno por WhatsApp</span>
+                            <a href="#inversion" class="w-full sm:w-auto btn-pastel-primary font-bold px-8 py-4 rounded-2xl flex items-center justify-center space-x-3 text-base sm:text-lg">
+                                <span>Agendar Turno Profesional</span>
+                                <i class="fa-solid fa-arrow-right text-sm"></i>
                             </a>
                             <a href="#trabajar" class="w-full sm:w-auto frosted-card text-brand-subtitle font-bold px-8 py-4 rounded-2xl text-center text-base sm:text-lg hover:text-brand-title">
                                 Explorar Áreas
@@ -235,13 +259,13 @@
                                         <div class="w-8 h-8 rounded-xl icon-box flex items-center justify-center text-xs flex-shrink-0">
                                             <i class="fa-solid fa-video"></i>
                                         </div>
-                                        <span>Videollamada Online</span>
+                                        <span class="leading-none">Videollamada Online</span>
                                     </div>
                                     <div class="flex items-center space-x-2.5">
                                         <div class="w-8 h-8 rounded-xl icon-box flex items-center justify-center text-xs flex-shrink-0">
                                             <i class="fa-solid fa-clock"></i>
                                         </div>
-                                        <span>1 Hora y Media</span>
+                                        <span class="leading-none">1 Hora y Media</span>
                                     </div>
                                 </div>
                             </div>
@@ -267,110 +291,110 @@
                     <!-- Card 1 -->
                     <div class="frosted-card p-8 rounded-3xl flex flex-col justify-between">
                         <div>
-                            <div class="w-14 h-14 rounded-2xl icon-box flex items-center justify-center text-xl mb-6">
+                            <div class="w-14 h-14 rounded-2xl icon-box flex items-center justify-center text-xl mb-6 flex-shrink-0">
                                 <i class="fa-solid fa-heart"></i>
                             </div>
-                            <h3 class="font-title font-bold text-2xl text-brand-title mb-3">Vínculos de pareja</h3>
+                            <h3 class="font-title font-bold text-2xl text-brand-title mb-3 leading-snug">Vínculos de pareja</h3>
                             <p class="text-brand-body text-base font-normal leading-relaxed">Comprensión de patrones afectivos, elecciones de pareja y dinámicas relacionales profundas.</p>
                         </div>
                     </div>
                     <!-- Card 2 -->
                     <div class="frosted-card p-8 rounded-3xl flex flex-col justify-between">
                         <div>
-                            <div class="w-14 h-14 rounded-2xl icon-box flex items-center justify-center text-xl mb-6">
+                            <div class="w-14 h-14 rounded-2xl icon-box flex items-center justify-center text-xl mb-6 flex-shrink-0">
                                 <i class="fa-solid fa-child-reaching"></i>
                             </div>
-                            <h3 class="font-title font-bold text-2xl text-brand-title mb-3">Vínculos con nuestros hijos</h3>
+                            <h3 class="font-title font-bold text-2xl text-brand-title mb-3 leading-snug">Vínculos con nuestros hijos</h3>
                             <p class="text-brand-body text-base font-normal leading-relaxed">Revisión del rol parental y el lugar exacto que cada hijo ocupa dentro del sistema familiar.</p>
                         </div>
                     </div>
                     <!-- Card 3 -->
                     <div class="frosted-card p-8 rounded-3xl flex flex-col justify-between">
                         <div>
-                            <div class="w-14 h-14 rounded-2xl icon-box flex items-center justify-center text-xl mb-6">
+                            <div class="w-14 h-14 rounded-2xl icon-box flex items-center justify-center text-xl mb-6 flex-shrink-0">
                                 <i class="fa-solid fa-people-roof"></i>
                             </div>
-                            <h3 class="font-title font-bold text-2xl text-brand-title mb-3">Padre y madre</h3>
+                            <h3 class="font-title font-bold text-2xl text-brand-title mb-3 leading-snug">Padre y madre</h3>
                             <p class="text-brand-body text-base font-normal leading-relaxed">Sanación y reconexión profunda con la relación primordial con nuestros progenitores.</p>
                         </div>
                     </div>
                     <!-- Card 4 -->
                     <div class="frosted-card p-8 rounded-3xl flex flex-col justify-between">
                         <div>
-                            <div class="w-14 h-14 rounded-2xl icon-box flex items-center justify-center text-xl mb-6">
+                            <div class="w-14 h-14 rounded-2xl icon-box flex items-center justify-center text-xl mb-6 flex-shrink-0">
                                 <i class="fa-solid fa-face-smile"></i>
                             </div>
-                            <h3 class="font-title font-bold text-2xl text-brand-title mb-3">Niño interior</h3>
+                            <h3 class="font-title font-bold text-2xl text-brand-title mb-3 leading-snug">Niño interior</h3>
                             <p class="text-brand-body text-base font-normal leading-relaxed">Sanar y reconectar con las etapas tempranas de nuestro desarrollo emocional y vital.</p>
                         </div>
                     </div>
                     <!-- Card 5 -->
                     <div class="frosted-card p-8 rounded-3xl flex flex-col justify-between">
                         <div>
-                            <div class="w-14 h-14 rounded-2xl icon-box flex items-center justify-center text-xl mb-6">
+                            <div class="w-14 h-14 rounded-2xl icon-box flex items-center justify-center text-xl mb-6 flex-shrink-0">
                                 <i class="fa-solid fa-rotate-left"></i>
                             </div>
-                            <h3 class="font-title font-bold text-2xl text-brand-title mb-3">Patrones repetitivos</h3>
+                            <h3 class="font-title font-bold text-2xl text-brand-title mb-3 leading-snug">Patrones repetitivos</h3>
                             <p class="text-brand-body text-base font-normal leading-relaxed">Identificación de situaciones cíclicas que se repiten generación tras generación sin comprender por qué.</p>
                         </div>
                     </div>
                     <!-- Card 6 -->
                     <div class="frosted-card p-8 rounded-3xl flex flex-col justify-between">
                         <div>
-                            <div class="w-14 h-14 rounded-2xl icon-box flex items-center justify-center text-xl mb-6">
+                            <div class="w-14 h-14 rounded-2xl icon-box flex items-center justify-center text-xl mb-6 flex-shrink-0">
                                 <i class="fa-solid fa-scroll"></i>
                             </div>
-                            <h3 class="font-title font-bold text-2xl text-brand-title mb-3">Mandatos y creencias</h3>
+                            <h3 class="font-title font-bold text-2xl text-brand-title mb-3 leading-snug">Mandatos y creencias</h3>
                             <p class="text-brand-body text-base font-normal leading-relaxed">Liberación de lealtades invisibles y creencias familiares heredadas que limitan el desarrollo.</p>
                         </div>
                     </div>
                     <!-- Card 7 -->
                     <div class="frosted-card p-8 rounded-3xl flex flex-col justify-between">
                         <div>
-                            <div class="w-14 h-14 rounded-2xl icon-box flex items-center justify-center text-xl mb-6">
+                            <div class="w-14 h-14 rounded-2xl icon-box flex items-center justify-center text-xl mb-6 flex-shrink-0">
                                 <i class="fa-solid fa-compass"></i>
                             </div>
-                            <h3 class="font-title font-bold text-2xl text-brand-title mb-3">Avance y decisiones</h3>
+                            <h3 class="font-title font-bold text-2xl text-brand-title mb-3 leading-snug">Avance y decisiones</h3>
                             <p class="text-brand-body text-base font-normal leading-relaxed">Destraba de dificultades para avanzar con seguridad en proyectos vitales y tomas de decisiones.</p>
                         </div>
                     </div>
                     <!-- Card 8 -->
                     <div class="frosted-card p-8 rounded-3xl flex flex-col justify-between">
                         <div>
-                            <div class="w-14 h-14 rounded-2xl icon-box flex items-center justify-center text-xl mb-6">
+                            <div class="w-14 h-14 rounded-2xl icon-box flex items-center justify-center text-xl mb-6 flex-shrink-0">
                                 <i class="fa-solid fa-coins"></i>
                             </div>
-                            <h3 class="font-title font-bold text-2xl text-brand-title mb-3">Dinero y abundancia</h3>
+                            <h3 class="font-title font-bold text-2xl text-brand-title mb-3 leading-snug">Dinero y abundancia</h3>
                             <p class="text-brand-body text-base font-normal leading-relaxed">Armonización de la relación sistémica con el dinero, el flujo de recursos y la prosperidad.</p>
                         </div>
                     </div>
                     <!-- Card 9 -->
                     <div class="frosted-card p-8 rounded-3xl flex flex-col justify-between">
                         <div>
-                            <div class="w-14 h-14 rounded-2xl icon-box flex items-center justify-center text-xl mb-6">
+                            <div class="w-14 h-14 rounded-2xl icon-box flex items-center justify-center text-xl mb-6 flex-shrink-0">
                                 <i class="fa-solid fa-briefcase"></i>
                             </div>
-                            <h3 class="font-title font-bold text-2xl text-brand-title mb-3">Trabajo y proyectos</h3>
+                            <h3 class="font-title font-bold text-2xl text-brand-title mb-3 leading-snug">Trabajo y proyectos</h3>
                             <p class="text-brand-body text-base font-normal leading-relaxed">Superación de bloqueos profesionales y estructuración saludable de metas laborales.</p>
                         </div>
                     </div>
                     <!-- Card 10 -->
                     <div class="frosted-card p-8 rounded-3xl flex flex-col justify-between">
                         <div>
-                            <div class="w-14 h-14 rounded-2xl icon-box flex items-center justify-center text-xl mb-6">
+                            <div class="w-14 h-14 rounded-2xl icon-box flex items-center justify-center text-xl mb-6 flex-shrink-0">
                                 <i class="fa-solid fa-scale-balanced"></i>
                             </div>
-                            <h3 class="font-title font-bold text-2xl text-brand-title mb-3">Orden sistémico</h3>
+                            <h3 class="font-title font-bold text-2xl text-brand-title mb-3 leading-snug">Orden sistémico</h3>
                             <p class="text-brand-body text-base font-normal leading-relaxed">Reubicación en el sistema: salir de roles infantiles o cargas que no te corresponden como hijo.</p>
                         </div>
                     </div>
                     <!-- Card 11 (Spans 2 columns on lg screens for clean symmetry) -->
                     <div class="frosted-card p-8 rounded-3xl flex flex-col justify-between md:col-span-2 lg:col-span-2">
                         <div>
-                            <div class="w-14 h-14 rounded-2xl icon-box flex items-center justify-center text-xl mb-6">
+                            <div class="w-14 h-14 rounded-2xl icon-box flex items-center justify-center text-xl mb-6 flex-shrink-0">
                                 <i class="fa-solid fa-book-open-reader"></i>
                             </div>
-                            <h3 class="font-title font-bold text-2xl text-brand-title mb-3">Historia familiar pendiente</h3>
+                            <h3 class="font-title font-bold text-2xl text-brand-title mb-3 leading-snug">Historia familiar pendiente</h3>
                             <p class="text-brand-body text-base font-normal leading-relaxed">Situaciones críticas o excluidas de nuestra historia familiar que necesitan ser integradas y miradas con amor, aceptación y total conciencia sistémica.</p>
                         </div>
                     </div>
@@ -394,24 +418,24 @@
                         </p>
                         <div class="space-y-6 pt-2">
                             <div class="flex items-start space-x-4">
-                                <div class="w-9 h-9 rounded-xl icon-box flex items-center justify-center flex-shrink-0 mt-1">
+                                <div class="w-9 h-9 rounded-xl icon-box flex items-center justify-center flex-shrink-0 mt-0.5">
                                     <i class="fa-solid fa-check text-sm font-bold"></i>
                                 </div>
-                                <p class="text-brand-body text-base sm:text-lg font-normal">
+                                <p class="text-brand-body text-base sm:text-lg font-normal leading-relaxed">
                                     <strong class="font-bold text-brand-title">Nueva perspectiva:</strong> Cuando algo puede ser visto y llevado a la conciencia, tenemos la posibilidad de comprenderlo y elegir qué queremos hacer diferente.
                                 </p>
                             </div>
                             <div class="flex items-start space-x-4">
-                                <div class="w-9 h-9 rounded-xl icon-box flex items-center justify-center flex-shrink-0 mt-1">
+                                <div class="w-9 h-9 rounded-xl icon-box flex items-center justify-center flex-shrink-0 mt-0.5">
                                     <i class="fa-solid fa-check text-sm font-bold"></i>
                                 </div>
-                                <p class="text-brand-body text-base sm:text-lg font-normal">
+                                <p class="text-brand-body text-base sm:text-lg font-normal leading-relaxed">
                                     <strong class="font-bold text-brand-title">Lugar propio:</strong> Ayuda a recuperar un espacio más propio dentro de nuestro sistema, honrando la historia sin cargar con destinos ajenos.
                                 </p>
                             </div>
                         </div>
                     </div>
-                    <div class="frosted-card p-10 sm:p-14 rounded-3xl relative overflow-hidden">
+                    <div class="frosted-card p-10 sm:p-14 rounded-3xl relative overflow-hidden flex flex-col justify-between">
                         <div class="absolute top-4 right-6 text-brand-subtitle/15 text-8xl font-title select-none pointer-events-none">
                             “
                         </div>
@@ -445,7 +469,7 @@
                     <!-- Session Box 1 -->
                     <div class="frosted-card p-10 rounded-3xl text-center space-y-6 flex flex-col justify-between">
                         <div>
-                            <div class="w-16 h-16 icon-box rounded-2xl flex items-center justify-center text-2xl mx-auto mb-6">
+                            <div class="w-16 h-16 icon-box rounded-2xl flex items-center justify-center text-2xl mx-auto mb-6 flex-shrink-0">
                                 <i class="fa-solid fa-laptop-code"></i>
                             </div>
                             <h3 class="font-title font-bold text-2xl text-brand-title mb-3">Individuales y Online</h3>
@@ -457,7 +481,7 @@
                     <!-- Session Box 2 -->
                     <div class="frosted-card p-10 rounded-3xl text-center space-y-6 flex flex-col justify-between">
                         <div>
-                            <div class="w-16 h-16 icon-box rounded-2xl flex items-center justify-center text-2xl mx-auto mb-6">
+                            <div class="w-16 h-16 icon-box rounded-2xl flex items-center justify-center text-2xl mx-auto mb-6 flex-shrink-0">
                                 <i class="fa-solid fa-calendar-check"></i>
                             </div>
                             <h3 class="font-title font-bold text-2xl text-brand-title mb-3">Agenda Previa</h3>
@@ -469,7 +493,7 @@
                     <!-- Session Box 3 -->
                     <div class="frosted-card p-10 rounded-3xl text-center space-y-6 flex flex-col justify-between">
                         <div>
-                            <div class="w-16 h-16 icon-box rounded-2xl flex items-center justify-center text-2xl mx-auto mb-6">
+                            <div class="w-16 h-16 icon-box rounded-2xl flex items-center justify-center text-2xl mx-auto mb-6 flex-shrink-0">
                                 <i class="fa-solid fa-hourglass-half"></i>
                             </div>
                             <h3 class="font-title font-bold text-2xl text-brand-title mb-3">Duración Aproximada</h3>
@@ -482,7 +506,7 @@
             </div>
         </section>
 
-        <!-- Professional Payment & Investment Section -->
+        <!-- Professional Payment & Investment Section (100% Light Pastel Theme) -->
         <section id="inversion" class="py-20 sm:py-32">
             <div class="max-w-5xl mx-auto px-6 lg:px-12">
                 <div class="text-center max-w-3xl mx-auto space-y-4 mb-16 sm:mb-20">
@@ -493,72 +517,72 @@
                     <p class="text-brand-body font-normal text-lg sm:text-xl">Pasarelas de pago seguras y opciones transparentes adaptadas a moneda nacional e internacional.</p>
                 </div>
 
-                <div class="frosted-card rounded-3xl overflow-hidden grid lg:grid-cols-12 items-stretch">
-                    <!-- Left Pricing Column -->
-                    <div class="lg:col-span-5 p-10 lg:p-12 bg-[#3B1A60]/90 text-white flex flex-col justify-between backdrop-blur-md">
+                <div class="frosted-card rounded-3xl overflow-hidden grid lg:grid-cols-12 items-stretch border border-white shadow-xl">
+                    <!-- Left Pricing Column (Soft Pastel Accent) -->
+                    <div class="lg:col-span-5 p-10 lg:p-12 frosted-card-accent text-brand-title flex flex-col justify-between">
                         <div class="space-y-6">
-                            <span class="inline-block bg-white/20 text-white px-4 py-1.5 rounded-full text-xs font-bold tracking-widest uppercase border border-white/30">
+                            <span class="inline-block bg-white/80 text-brand-subtitle px-4 py-1.5 rounded-full text-xs font-bold tracking-widest uppercase border border-white shadow-xs">
                                 Sesión Sistémica
                             </span>
                             <div>
-                                <div class="text-4xl sm:text-5xl font-extrabold font-title tracking-tight mb-2 text-white">
-                                    $70.000 <span class="text-xl font-normal text-purple-200">ARS</span>
+                                <div class="text-4xl sm:text-5xl font-extrabold font-title tracking-tight mb-2 text-brand-title">
+                                    $70.000 <span class="text-xl font-semibold text-brand-subtitle">ARS</span>
                                 </div>
-                                <div class="text-xl font-medium text-purple-200">
-                                    o USD 95 <span class="text-sm font-normal text-purple-300">Internacional</span>
+                                <div class="text-xl font-bold text-brand-subtitle">
+                                    o USD 95 <span class="text-sm font-semibold text-brand-body">Internacional</span>
                                 </div>
                             </div>
-                            <p class="text-purple-100 text-base font-normal leading-relaxed">
+                            <p class="text-brand-body text-base font-normal leading-relaxed">
                                 Incluye el encuadre profesional, la sesión personalizada de 1 hora y media por videollamada y las orientaciones de integración.
                             </p>
                         </div>
-                        <div class="pt-10 mt-10 border-t border-purple-400/30">
-                            <a href="https://wa.me/5491154581020?text=Hola%20Celeste,%20me%20gustar%C3%ADa%20consultar%20sobre%20las%20sesiones%20de%20Constelaciones%20Familiares.%20Quisiera%20conocer%20disponibilidad,%20modalidad%20y%20precio.%20Muchas%20gracias." target="_blank" rel="noopener" class="w-full btn-whatsapp font-bold py-4 rounded-2xl flex items-center justify-center space-x-2 text-base tracking-wide">
-                                <i class="fa-brands fa-whatsapp text-xl"></i>
-                                <span>Reservar Turno por WhatsApp</span>
+                        <div class="pt-10 mt-10 border-t border-white/60">
+                            <a href="https://wa.me/5491154581020?text=Hola%20Celeste,%20me%20gustar%C3%ADa%20consultar%20sobre%20las%20sesiones%20de%20Constelaciones%20Familiares.%20Quisiera%20conocer%20disponibilidad,%20modalidad%20y%20precio.%20Muchas%20gracias." target="_blank" rel="noopener" class="w-full btn-pastel-primary font-bold py-4 rounded-2xl flex items-center justify-center space-x-2 text-base tracking-wide">
+                                <i class="fa-solid fa-calendar-check text-lg"></i>
+                                <span>Reservar Turno Ahora</span>
                             </a>
                         </div>
                     </div>
 
                     <!-- Right Payment Options Column -->
-                    <div class="lg:col-span-7 p-8 sm:p-12 space-y-6 flex flex-col justify-center">
+                    <div class="lg:col-span-7 p-8 sm:p-12 space-y-6 flex flex-col justify-center bg-white/40">
                         <h3 class="font-title font-bold text-2xl text-brand-title">Medios de Pago Verificados</h3>
                         
                         <div class="space-y-4">
                             <!-- Option 1 -->
-                            <div class="flex items-center space-x-4 p-5 rounded-2xl bg-white/60 border border-white shadow-sm">
-                                <div class="w-12 h-12 rounded-xl icon-box flex items-center justify-center text-xl flex-shrink-0">
+                            <div class="flex items-center space-x-4 p-5 rounded-2xl bg-white/70 border border-white shadow-sm">
+                                <div class="w-13 h-13 rounded-2xl icon-box flex items-center justify-center text-xl flex-shrink-0">
                                     <i class="fa-solid fa-university"></i>
                                 </div>
                                 <div class="flex-grow">
                                     <h4 class="font-bold text-base text-brand-title leading-snug">Transferencia Bancaria (Argentina)</h4>
                                     <p class="text-sm text-brand-body mt-0.5">Acreditación directa mediante CBU o Alias en pesos argentinos.</p>
                                 </div>
-                                <span class="text-xs font-bold text-brand-subtitle bg-[#FFF5FA] border border-white px-3 py-1.5 rounded-full flex-shrink-0">Activo</span>
+                                <span class="text-xs font-bold text-brand-subtitle bg-[#FFF5FA] border border-white px-3.5 py-1.5 rounded-full flex-shrink-0 shadow-xs">Activo</span>
                             </div>
 
                             <!-- Option 2 -->
-                            <div class="flex items-center space-x-4 p-5 rounded-2xl bg-white/60 border border-white shadow-sm">
-                                <div class="w-12 h-12 rounded-xl icon-box flex items-center justify-center text-xl flex-shrink-0">
+                            <div class="flex items-center space-x-4 p-5 rounded-2xl bg-white/70 border border-white shadow-sm">
+                                <div class="w-13 h-13 rounded-2xl icon-box flex items-center justify-center text-xl flex-shrink-0">
                                     <i class="fa-solid fa-credit-card"></i>
                                 </div>
                                 <div class="flex-grow">
                                     <h4 class="font-bold text-base text-brand-title leading-snug">Tarjetas de Crédito / Débito</h4>
                                     <p class="text-sm text-brand-body mt-0.5">Procesamiento cifrado a través de pasarela de cobro digital segura.</p>
                                 </div>
-                                <span class="text-xs font-bold text-brand-subtitle bg-[#FFF5FA] border border-white px-3 py-1.5 rounded-full flex-shrink-0">Activo</span>
+                                <span class="text-xs font-bold text-brand-subtitle bg-[#FFF5FA] border border-white px-3.5 py-1.5 rounded-full flex-shrink-0 shadow-xs">Activo</span>
                             </div>
 
                             <!-- Option 3 -->
-                            <div class="flex items-center space-x-4 p-5 rounded-2xl bg-white/60 border border-white shadow-sm">
-                                <div class="w-12 h-12 rounded-xl icon-box flex items-center justify-center text-xl flex-shrink-0">
+                            <div class="flex items-center space-x-4 p-5 rounded-2xl bg-white/70 border border-white shadow-sm">
+                                <div class="w-13 h-13 rounded-2xl icon-box flex items-center justify-center text-xl flex-shrink-0">
                                     <i class="fa-solid fa-globe"></i>
                                 </div>
                                 <div class="flex-grow">
                                     <h4 class="font-bold text-base text-brand-title leading-snug">Pagos Internacionales (PayPal / Wise)</h4>
                                     <p class="text-sm text-brand-body mt-0.5">Facturación en dólares estadounidenses para clientes del exterior.</p>
                                 </div>
-                                <span class="text-xs font-bold text-brand-subtitle bg-[#FFF5FA] border border-white px-3 py-1.5 rounded-full flex-shrink-0">Activo</span>
+                                <span class="text-xs font-bold text-brand-subtitle bg-[#FFF5FA] border border-white px-3.5 py-1.5 rounded-full flex-shrink-0 shadow-xs">Activo</span>
                             </div>
                         </div>
                     </div>
@@ -576,53 +600,57 @@
                     Podemos abrir un espacio para mirarlo juntos, desde una perspectiva sistémica, amorosa, clara y consciente.
                 </p>
                 <div class="pt-4 flex justify-center">
-                    <a href="https://wa.me/5491154581020?text=Hola%20Celeste,%20me%20gustar%C3%ADa%20consultar%20sobre%20las%20sesiones%20de%20Constelaciones%20Familiares.%20Quisiera%20conocer%20disponibilidad,%20modalidad%20y%20precio.%20Muchas%20gracias." target="_blank" rel="noopener" class="btn-whatsapp font-bold px-10 py-5 rounded-2xl text-lg sm:text-xl tracking-wide inline-flex items-center space-x-3">
-                        <i class="fa-brands fa-whatsapp text-2xl"></i>
-                        <span>Escribime para Consultar Disponibilidad</span>
+                    <a href="#inversion" class="btn-pastel-primary font-bold px-10 py-5 rounded-2xl text-lg sm:text-xl tracking-wide inline-flex items-center space-x-3">
+                        <i class="fa-regular fa-envelope text-xl"></i>
+                        <span>Consultar Disponibilidad</span>
                     </a>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- Floating WhatsApp Action Button -->
-    <a href="https://wa.me/5491154581020?text=Hola%20Celeste,%20me%20gustar%C3%ADa%20consultar%20sobre%20las%20sesiones%20de%20Constelaciones%20Familiares.%20Quisiera%20conocer%20disponibilidad,%20modalidad%20y%20precio.%20Muchas%20gracias." target="_blank" rel="noopener" aria-label="Contactar por WhatsApp" class="fixed bottom-6 right-6 z-50 btn-whatsapp w-14 h-14 sm:w-16 sm:h-16 rounded-full flex items-center justify-center text-2xl sm:text-3xl shadow-2xl hover:scale-110 active:scale-95 transition-all">
+    <!-- Floating WhatsApp Action Button (THE ONLY WHATSAPP BUTTON ON THE PAGE) -->
+    <a href="https://wa.me/5491154581020?text=Hola%20Celeste,%20me%20gustar%C3%ADa%20consultar%20sobre%20las%20sesiones%20de%20Constelaciones%20Familiares.%20Quisiera%20conocer%20disponibilidad,%20modalidad%20y%20precio.%20Muchas%20gracias." target="_blank" rel="noopener" aria-label="Contactar por WhatsApp" class="fixed bottom-6 right-6 z-50 btn-whatsapp w-16 h-16 rounded-full flex items-center justify-center text-3xl shadow-whatsapp hover:scale-110 active:scale-95 transition-all">
         <i class="fa-brands fa-whatsapp"></i>
     </a>
 
-    <!-- Footer & Mandatory Legal Disclaimer -->
-    <footer class="relative z-10 bg-[#140824] text-purple-100 pt-16 sm:pt-20 pb-12 sm:pb-16 border-t border-purple-900/50 mt-auto">
+    <!-- Footer & Mandatory Legal Disclaimer (100% Light Pastel Theme - Zero Black/Dark) -->
+    <footer class="relative z-10 frosted-card pt-16 sm:pt-20 pb-12 sm:pb-16 border-t border-white mt-auto">
         <div class="max-w-7xl mx-auto px-6 lg:px-12 space-y-12 sm:space-y-16">
             <div class="grid md:grid-cols-2 gap-8 items-center">
                 <div class="space-y-3 text-center md:text-left">
-                    <div class="flex items-center justify-center md:justify-start space-x-3">
-                        <div class="w-10 h-10 rounded-xl icon-box flex items-center justify-center text-sm font-title font-bold flex-shrink-0">
-                            CF
+                    <div class="flex items-center justify-center md:justify-start space-x-3.5">
+                        <div class="w-10 h-10 rounded-full overflow-hidden flex-shrink-0 border-2 border-white shadow-sm relative bg-[#FAF0F5]">
+                            <img src="celeste-logo.jpg" alt="Celeste Logo" class="w-full h-full object-cover scale-125 transform">
                         </div>
-                        <span class="font-title text-2xl font-bold text-white tracking-tight">Constelaciones Familiares</span>
+                        <span class="font-title text-2xl font-bold text-brand-title tracking-tight">Constelaciones Familiares</span>
                     </div>
-                    <p class="text-purple-200 text-sm sm:text-base max-w-md font-normal leading-relaxed mx-auto md:mx-0">
+                    <p class="text-brand-body text-sm sm:text-base max-w-md font-normal leading-relaxed mx-auto md:mx-0">
                         Una mirada sistémica profesional para comprender lo que se repite en tu vida y recuperar tu lugar propio.
                     </p>
                 </div>
-                <div class="flex flex-wrap justify-center md:justify-end gap-6 text-sm sm:text-base text-purple-200 font-semibold">
-                    <a href="#enfoque" class="hover:text-white transition-colors">Inicio</a>
-                    <a href="#trabajar" class="hover:text-white transition-colors">Áreas</a>
-                    <a href="#aportar" class="hover:text-white transition-colors">Aportes</a>
-                    <a href="#sesiones" class="hover:text-white transition-colors">Sesiones</a>
-                    <a href="#inversion" class="hover:text-white transition-colors">Inversión</a>
+                <div class="flex flex-wrap justify-center md:justify-end gap-6 text-sm sm:text-base text-brand-subtitle font-bold">
+                    <a href="#enfoque" class="hover:text-brand-title transition-colors">Inicio</a>
+                    <a href="#trabajar" class="hover:text-brand-title transition-colors">Áreas</a>
+                    <a href="#aportar" class="hover:text-brand-title transition-colors">Aportes</a>
+                    <a href="#sesiones" class="hover:text-brand-title transition-colors">Sesiones</a>
+                    <a href="#inversion" class="hover:text-brand-title transition-colors">Inversión</a>
                 </div>
             </div>
 
-            <!-- Mandatory Disclaimer Box -->
-            <div class="bg-purple-950/60 border border-purple-800/80 rounded-2xl p-6 sm:p-8 text-xs sm:text-sm text-purple-200 leading-relaxed font-normal shadow-lg">
-                <p class="flex items-start space-x-3">
-                    <i class="fa-solid fa-circle-info text-purple-400 mt-0.5 flex-shrink-0 text-lg"></i>
-                    <span><strong>Aviso Legal:</strong> Las Constelaciones Familiares son una herramienta complementaria y no reemplazan la atención ni el tratamiento de profesionales de la salud.</span>
-                </p>
+            <!-- Mandatory Legal Disclaimer Box (Perfectly Aligned Icon & Text) -->
+            <div class="bg-white/70 border border-white rounded-2xl p-6 sm:p-8 shadow-sm">
+                <div class="flex items-start space-x-3.5">
+                    <div class="w-8 h-8 rounded-xl icon-box flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <i class="fa-solid fa-circle-info text-sm font-bold"></i>
+                    </div>
+                    <p class="text-xs sm:text-sm text-brand-body leading-relaxed font-normal flex-grow">
+                        <strong class="font-bold text-brand-title">Aviso Legal:</strong> Las Constelaciones Familiares son una herramienta complementaria y no reemplazan la atención ni el tratamiento de profesionales de la salud.
+                    </p>
+                </div>
             </div>
 
-            <div class="pt-8 border-t border-purple-900/60 text-center text-xs sm:text-sm text-purple-300 font-normal">
+            <div class="pt-8 border-t border-white/60 text-center text-xs sm:text-sm text-brand-subtitle font-medium">
                 <p>&copy; 2026 Constelaciones Familiares • Celeste - Universo Consciente. Todos los derechos reservados.</p>
             </div>
         </div>

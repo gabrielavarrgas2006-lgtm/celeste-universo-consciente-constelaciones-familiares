@@ -200,15 +200,15 @@
     <!-- Sparkles Background Layer -->
     <div class="sparkles-container" id="sparklesContainer" aria-hidden="true"></div>
 
-    <!-- Static Top Header (Quieta, estable, sin movimiento ni enlaces arriba) -->
-    <header class="bg-white/80 border-b border-white/60 py-5 transition-all">
-        <div class="max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-center sm:justify-start">
+    <!-- Static Centered Top Header (Perfectamente Centrado, Estable y Quieto) -->
+    <header class="bg-white/80 border-b border-white/60 py-6 transition-all">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-center text-center">
             <div class="flex items-center space-x-3.5">
                 <!-- Profile Avatar Photo (Tree of Life) -->
-                <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-full overflow-hidden flex-shrink-0 border-2 border-white shadow-md relative bg-[#FAF0F5]">
+                <div class="w-12 h-12 sm:w-13 sm:h-13 rounded-full overflow-hidden flex-shrink-0 border-2 border-white shadow-md relative bg-[#FAF0F5]">
                     <img src="celeste-logo.jpg" alt="Constelaciones Familiares" class="w-full h-full object-cover scale-125 transform">
                 </div>
-                <span class="font-title text-xl sm:text-2xl font-bold text-brand-title tracking-tight leading-none">
+                <span class="font-title text-2xl sm:text-3xl font-bold text-brand-title tracking-tight leading-none">
                     Constelaciones Familiares
                 </span>
             </div>
@@ -506,7 +506,7 @@
             </div>
         </section>
 
-        <!-- Professional Payment & Investment Section (100% Light Pastel Theme) -->
+        <!-- Professional Payment & Investment Section (Corrected Layout & Separated Payment Cards) -->
         <section id="inversion" class="py-20 sm:py-32">
             <div class="max-w-5xl mx-auto px-6 lg:px-12">
                 <div class="text-center max-w-3xl mx-auto space-y-4 mb-16 sm:mb-20">
@@ -544,43 +544,44 @@
                         </div>
                     </div>
 
-                    <!-- Right Payment Options Column -->
-                    <div class="lg:col-span-7 p-8 sm:p-12 space-y-6 flex flex-col justify-center bg-white/40">
+                    <!-- Right Payment Options Column (Con Espaciado Vertical Holgado y Tarjetas Independientes) -->
+                    <div class="lg:col-span-7 p-8 sm:p-12 lg:p-14 flex flex-col justify-center bg-white/40 space-y-8">
                         <h3 class="font-title font-bold text-2xl text-brand-title">Medios de Pago Verificados</h3>
                         
-                        <div class="space-y-4">
-                            <!-- Option 1 -->
-                            <div class="flex items-center space-x-4 p-5 rounded-2xl bg-white/70 border border-white shadow-sm">
+                        <!-- Contenedor con espacio vertical limpio y holgado entre tarjetas (space-y-6) -->
+                        <div class="space-y-6 sm:space-y-7">
+                            <!-- Tarjeta 1 (Elemento Independiente con sombra y bordes suaves) -->
+                            <div class="flex items-center space-x-4 sm:space-x-5 p-6 rounded-2xl bg-white/85 border border-white/90 shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5">
                                 <div class="w-13 h-13 rounded-2xl icon-box flex items-center justify-center text-xl flex-shrink-0">
                                     <i class="fa-solid fa-university"></i>
                                 </div>
                                 <div class="flex-grow">
-                                    <h4 class="font-bold text-base text-brand-title leading-snug">Transferencia Bancaria (Argentina)</h4>
-                                    <p class="text-sm text-brand-body mt-0.5">Acreditación directa mediante CBU o Alias en pesos argentinos.</p>
+                                    <h4 class="font-bold text-base sm:text-lg text-brand-title leading-snug">Transferencia Bancaria (Argentina)</h4>
+                                    <p class="text-sm text-brand-body mt-1">Acreditación directa mediante CBU o Alias en pesos argentinos.</p>
                                 </div>
                                 <span class="text-xs font-bold text-brand-subtitle bg-[#FFF5FA] border border-white px-3.5 py-1.5 rounded-full flex-shrink-0 shadow-xs">Activo</span>
                             </div>
 
-                            <!-- Option 2 -->
-                            <div class="flex items-center space-x-4 p-5 rounded-2xl bg-white/70 border border-white shadow-sm">
+                            <!-- Tarjeta 2 (Elemento Independiente con sombra y bordes suaves) -->
+                            <div class="flex items-center space-x-4 sm:space-x-5 p-6 rounded-2xl bg-white/85 border border-white/90 shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5">
                                 <div class="w-13 h-13 rounded-2xl icon-box flex items-center justify-center text-xl flex-shrink-0">
                                     <i class="fa-solid fa-credit-card"></i>
                                 </div>
                                 <div class="flex-grow">
-                                    <h4 class="font-bold text-base text-brand-title leading-snug">Tarjetas de Crédito / Débito</h4>
-                                    <p class="text-sm text-brand-body mt-0.5">Procesamiento cifrado a través de pasarela de cobro digital segura.</p>
+                                    <h4 class="font-bold text-base sm:text-lg text-brand-title leading-snug">Tarjetas de Crédito / Débito</h4>
+                                    <p class="text-sm text-brand-body mt-1">Procesamiento cifrado a través de pasarela de cobro digital segura.</p>
                                 </div>
                                 <span class="text-xs font-bold text-brand-subtitle bg-[#FFF5FA] border border-white px-3.5 py-1.5 rounded-full flex-shrink-0 shadow-xs">Activo</span>
                             </div>
 
-                            <!-- Option 3 -->
-                            <div class="flex items-center space-x-4 p-5 rounded-2xl bg-white/70 border border-white shadow-sm">
+                            <!-- Tarjeta 3 (Elemento Independiente con sombra y bordes suaves) -->
+                            <div class="flex items-center space-x-4 sm:space-x-5 p-6 rounded-2xl bg-white/85 border border-white/90 shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5">
                                 <div class="w-13 h-13 rounded-2xl icon-box flex items-center justify-center text-xl flex-shrink-0">
                                     <i class="fa-solid fa-globe"></i>
                                 </div>
                                 <div class="flex-grow">
-                                    <h4 class="font-bold text-base text-brand-title leading-snug">Pagos Internacionales (PayPal / Wise)</h4>
-                                    <p class="text-sm text-brand-body mt-0.5">Facturación en dólares estadounidenses para clientes del exterior.</p>
+                                    <h4 class="font-bold text-base sm:text-lg text-brand-title leading-snug">Pagos Internacionales (PayPal / Wise)</h4>
+                                    <p class="text-sm text-brand-body mt-1">Facturación en dólares estadounidenses para clientes del exterior.</p>
                                 </div>
                                 <span class="text-xs font-bold text-brand-subtitle bg-[#FFF5FA] border border-white px-3.5 py-1.5 rounded-full flex-shrink-0 shadow-xs">Activo</span>
                             </div>
@@ -609,7 +610,7 @@
         </section>
     </main>
 
-    <!-- Floating WhatsApp Action Button (THE ONLY WHATSAPP BUTTON ON THE PAGE) -->
+    <!-- Floating WhatsApp Action Button (Independiente en la esquina sin tapar contenido) -->
     <a href="https://wa.me/5491154581020?text=Hola%20Celeste,%20me%20gustar%C3%ADa%20consultar%20sobre%20las%20sesiones%20de%20Constelaciones%20Familiares.%20Quisiera%20conocer%20disponibilidad%20y%20modalidad.%20Muchas%20gracias." target="_blank" rel="noopener" aria-label="Contactar por WhatsApp" class="fixed bottom-6 right-6 z-50 btn-whatsapp w-16 h-16 rounded-full flex items-center justify-center text-3xl shadow-whatsapp hover:scale-110 active:scale-95 transition-all">
         <i class="fa-brands fa-whatsapp"></i>
     </a>
